@@ -35,3 +35,13 @@ I'm a software developer, building my version of the digital world one step at a
    I started my coding journey as a naive computer science enthusiast with a passion to learn everything I could about this programming world - code, unix, linux, theory. And all the while, teaching myself iOS development with a dream to build my own app. I've always been intrigued with robotics especially from watching the Transformers movies series as a child and seeing how the industry has come to life and grown in recent years. The dream is to carve out a name for Africa in the industry since the knowledge I have now gives me insight into how it all works.
 </details>
 
+
+
+---
+
+### 🚀 Featured Projects
+
+- 🌱 **[AgriLink](https://github.com/gnm7208/Agrilink)** — agricultural super app (team project, backend developer). React · Flask · PostgreSQL. Live: [app](https://agrilink-sigma.vercel.app) · [API](https://agrilink-11rw.onrender.com)
+- 🛒 **[Fiti Electronics](https://github.com/gnm7208/Fiti_Electronics)** — mini e-commerce web app (solo build). JavaScript · JSON Server. Live: [Netlify](https://fiti.netlify.app) · [Render](https://fiti-electronics.onrender.com)
+- 📱 **[Fint](https://github.com/gnm7208/Fint)** — Android school app in 100% Kotlin (eMobilis MIT capstone). M-Pesa integration coming soon.
+    
