@@ -1,0 +1,40 @@
+# Rotate the profile README from GitHub itself.
+#
+# As written this only runs when you click "Run workflow" in the Actions tab —
+# handy for switching from your phone. To rotate automatically, uncomment the
+# schedule block below (the cron here is 06:00 UTC = 09:00 Nairobi on Mondays).
+name: Rotate profile README
+
+on:
+  workflow_dispatch:
+    inputs:
+      variant:
+        description: "Variant to put live (blank = next in order)"
+        required: false
+        default: ""
+  # schedule:
+  #   - cron: "0 6 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Switch
+        run: |
+          chmod +x scripts/readme-switch.sh
+          if [ -n "${{ github.event.inputs.variant }}" ]; then
+            ./scripts/readme-switch.sh use "${{ github.event.inputs.variant }}" --force
+          else
+            ./scripts/readme-switch.sh next --force
+          fi
+      - name: Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md readmes/active.txt
+          git diff --cached --quiet || git commit -m "readme: rotate to $(cat readmes/active.txt)"
+          git push
